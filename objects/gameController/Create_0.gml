@@ -2,6 +2,8 @@
 // You can write your code in this editor
 global.gmController = self;
 
+InitialDefaultValues();
+
 enum gameState {
    intro,
    menu,
@@ -10,8 +12,6 @@ enum gameState {
 
 // Init Controller Values
 state = gameState.match;
-player_start_pos_x = 147;
-player_start_pos_y = 169;
 player_default_speed = 4;
 
 StartPlayMatch();

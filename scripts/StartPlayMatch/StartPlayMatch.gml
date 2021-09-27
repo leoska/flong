@@ -3,6 +3,3 @@
 function StartPlayMatch() {
 	var pl = instance_create_depth(147, 169, 0, player);
 }
-
-function lol() {
-}

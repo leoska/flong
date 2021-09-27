@@ -3,9 +3,8 @@
 
 player_speed = 4;
 
-if (global.gmController) {
-	player_speed = global.gmController.player_default_speed;
+if (variable_global_exists("defaultValues")) {
+	player_speed = global.defaultValues[? "player_default_speed"];
 }
 
-previous_delta_time = delta_time;
 ideal_delta_time = 1 / room_speed * 1000000;
