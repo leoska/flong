@@ -15,6 +15,7 @@ function InitialDefaultValues() {
 	// Balls Default Values
 	ds_map_add(defaultValues, "ball_default_x", room_width_center);
 	ds_map_add(defaultValues, "ball_default_y", room_height_center);
+	ds_map_add(defaultValues, "ball_start_speed", 7);
 
 	
 	global.defaultValues = defaultValues;
