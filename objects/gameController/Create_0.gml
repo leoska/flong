@@ -12,6 +12,5 @@ enum gameState {
 
 // Init Controller Values
 state = gameState.match;
-player_default_speed = 4;
 
 StartPlayMatch();
