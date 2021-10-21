@@ -3,7 +3,19 @@
 
 ping = 0;
 port = 25569;
-host = "127.0.0.1";
+host = "192.168.50.209";
 
-socket = network_create_socket(network_socket_ws);
-network_connect(socket, host, port);
+if (os_is_network_connected()) {
+	socket = network_create_socket(network_socket_ws);
+	network_set_config(network_config_use_non_blocking_socket, 1);
+} else {
+	show_debug_message("");
+}
+
+
+alarm[0] = 120;
+
+// For networking async event
+type_event = nil;
+buffer = nil;
+buffer_client = buffer_create(1024, buffer_fixed, 2);

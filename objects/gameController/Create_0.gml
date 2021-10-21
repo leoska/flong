@@ -14,3 +14,6 @@ enum gameState {
 state = gameState.match;
 
 StartPlayMatch();
+
+// Create network manager
+global.networkManager = instance_create_depth(0, 0, 0, networkManager);
