@@ -1,10 +1,16 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// Initialize WebSocket client
 ping = 0;
 port = 25569;
-host = "192.168.50.209";
+host = "localhost";
 
+// Http variables
+httpHost = "localhost:25565/api/";
+httpProtocol = "http";
+
+// WebSocket client
 if (os_is_network_connected()) {
 	socket = network_create_socket(network_socket_ws);
 	network_set_config(network_config_use_non_blocking_socket, 1);
@@ -13,9 +19,9 @@ if (os_is_network_connected()) {
 }
 
 
-alarm[0] = 120;
+//alarm[0] = 120;
 
 // For networking async event
-type_event = nil;
-buffer = nil;
+type_event = undefined;
+buffer = pointer_null;
 buffer_client = buffer_create(1024, buffer_fixed, 2);

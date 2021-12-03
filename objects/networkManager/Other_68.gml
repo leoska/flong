@@ -14,7 +14,7 @@ switch(type_event) {
 		ds_map_add(map, "event", "message");
 		ds_map_add(map, "body", "yes");
 		buffer_seek(buffer_client, buffer_seek_start, 0);
-		buffer_write(buffer_client, buffer_string, json_encode(map));
+		buffer_write(buffer_client, buffer_text, json_encode(map));
 		network_send_raw(socket, buffer_client, buffer_tell(buffer_client));
 		ds_map_destroy(map);
 	break;

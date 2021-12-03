@@ -1,5 +1,4 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+/// @function InitialDefaultValues()
 function InitialDefaultValues() {
 	var defaultValues = ds_map_create();
 	var room_width_center = room_width / 2;

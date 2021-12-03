@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-global.gmController = self;
+global.version = "0.0.1";
+global.versionType = "";
+global.platform = "html5";
 
 InitialDefaultValues();
 
@@ -11,9 +13,4 @@ enum gameState {
 };
 
 // Init Controller Values
-state = gameState.match;
-
-StartPlayMatch();
-
-// Create network manager
-global.networkManager = instance_create_depth(0, 0, 0, networkManager);
+state = gameState.intro;
