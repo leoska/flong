@@ -1,4 +1,7 @@
+/// @description Loading game intro
+///
 /// @function StartLoadMenu()
+
 function StartLoadMenu(){
 	GetGameController();
 	

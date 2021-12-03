@@ -1,4 +1,7 @@
+/// @description initial ds_map with default values
+///
 /// @function InitialDefaultValues()
+
 function InitialDefaultValues() {
 	var defaultValues = ds_map_create();
 	var room_width_center = room_width / 2;

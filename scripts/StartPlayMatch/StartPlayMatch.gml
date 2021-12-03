@@ -1,5 +1,7 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+/// @description Initialize game room with game objects
+///
+/// @function StartPlayMatch()
+
 function StartPlayMatch() {
 	var pl_xPos = global.defaultValues[? "player_default_x"];
 	var pl_yPos = global.defaultValues[? "player_default_y"];

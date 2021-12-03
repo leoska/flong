@@ -1,4 +1,7 @@
+/// @description Send INIT (GET) request on server
+///
 /// @function HttpInitRequest()
+
 function HttpInitRequest() {
 	var host = string(global.networkManager.httpHost);
 	var protocol = global.networkManager.httpProtocol;
