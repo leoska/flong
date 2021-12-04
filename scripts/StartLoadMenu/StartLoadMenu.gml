@@ -1,4 +1,4 @@
-/// @description Loading game intro
+/// @description Load game intro
 ///
 /// @function StartLoadMenu()
 
@@ -9,5 +9,5 @@ function StartLoadMenu(){
 	global.networkManager = instance_create_layer(0, 0, "Controllers", networkManager);
 
 	// Send Init Request
-	HttpInitRequest();
+	SendHttpRequest("init");
 }

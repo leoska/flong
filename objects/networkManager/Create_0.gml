@@ -9,6 +9,10 @@ host = "localhost";
 // Http variables
 httpHost = "localhost:25565/api/";
 httpProtocol = "http";
+httpRequests = {
+	init: undefined,
+	auth: undefined,
+}
 
 // WebSocket client
 if (os_is_network_connected()) {

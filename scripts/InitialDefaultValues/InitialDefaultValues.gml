@@ -1,4 +1,4 @@
-/// @description initial ds_map with default values
+/// @description Initialize ds_map with default values
 ///
 /// @function InitialDefaultValues()
 

@@ -3,6 +3,7 @@
 global.version = "0.0.1";
 global.versionType = "";
 global.platform = "html5";
+global.debug = true;
 
 InitialDefaultValues();
 

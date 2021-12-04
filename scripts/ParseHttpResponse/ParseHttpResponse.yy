@@ -6,7 +6,7 @@
     "path": "folders/Scripts/HttpUtils.yy",
   },
   "resourceVersion": "1.0",
-  "name": "GetBaseHeaders",
+  "name": "ParseHttpResponse",
   "tags": [],
   "resourceType": "GMScript",
 }
