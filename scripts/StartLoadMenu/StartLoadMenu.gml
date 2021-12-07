@@ -10,4 +10,10 @@ function StartLoadMenu(){
 
 	// Send Init Request
 	SendHttpRequest("init");
+	
+	
+	
+	SendHttpRequest("init");
+	
+	SendHttpRequest("init");
 }
