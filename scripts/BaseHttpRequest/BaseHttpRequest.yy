@@ -6,7 +6,7 @@
     "path": "folders/Scripts/HttpRequests.yy",
   },
   "resourceVersion": "1.0",
-  "name": "HttpInitRequest",
+  "name": "BaseHttpRequest",
   "tags": [],
   "resourceType": "GMScript",
 }
