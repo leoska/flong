@@ -1,11 +1,12 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function BaseHttpRequest() constructor {
-	url = "";					// Request URL
-	httpId = undefined;			// ID of request
-	body = undefined;			// Request body (For POST)
-	_method = httpMethod.GET;	// Request's HTTP method
-	response = undefined;		// Response
+	static url = string(global.networkManager.httpHost);			// Request URL
+	static protocol = string(global.networkManager.httpProtocol);	// Protocol (http or https)
+	httpId = undefined;												// ID of request
+	body = undefined;												// Request body (For POST)
+	_method = httpMethod.GET;										// Request's HTTP method
+	response = undefined;											// Response
 	params = {};
 	
 	enum httpMethod {
@@ -14,8 +15,8 @@ function BaseHttpRequest() constructor {
 	};
 	
 	/// @description	Getter for url
-	/// @function		GetUrl()
-	static GetUrl = function() {
+	/// @function		GetApiName()
+	static GetApiName = function() {
 		throw ("Try to call virtual method.");
 	}
 	
@@ -23,7 +24,8 @@ function BaseHttpRequest() constructor {
 	/// @function		Send()
 	Send = function() {
 		try {
-			Process();
+			Process(BuildUrl());
+			Log();
 		} catch(exception) {
 			// TODO: пока просто показываю сообщение об ошибке
 			// Позже нужно добавить обработку
@@ -41,6 +43,12 @@ function BaseHttpRequest() constructor {
 	/// @description	Build request URL with query string (params)
 	/// @function		BuildUrl()
 	BuildUrl = function() {
+		var parameters = ParamsParse();
+		var result = protocol + "://" + url + GetApiName();
+		if (parameters != "")
+			result += parameters;
+			
+		return result;
 	}
 	
 	/// @description	Parse params struct to query string
@@ -64,6 +72,8 @@ function BaseHttpRequest() constructor {
 		return result;
 	}
 	
+	/// @description	Log request to console
+	/// @function		Log()
 	Log = function() {
 		if (global.debug) {
 			show_debug_message("[HTTP-Request] (" + string(reqStats.httpId) + "#) " + reqStats.url + "\n" + string(reqStats.body));
