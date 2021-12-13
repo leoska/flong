@@ -9,10 +9,7 @@ host = "localhost";
 // Http variables
 httpHost = "localhost:25565/api/";
 httpProtocol = "http";
-httpRequests = {
-	init: undefined,
-	auth: undefined,
-}
+listRequests = ds_list_create();
 
 // WebSocket client
 if (os_is_network_connected()) {

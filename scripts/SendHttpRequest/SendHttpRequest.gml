@@ -1,26 +1,30 @@
 /// @description Wrapper for send HTTP requests
 ///
 /// @function					SendHttpRequest(request)
-/// @param {string} request		HTTP-request name
+/// @param {string} name		HTTP-request name
 
-function SendHttpRequest(request) {
-	var reqStats = undefined;
+function SendHttpRequest(name) {
+	var request = undefined;
+	var net = global.networkManager;
+	
 	try {
-		switch(request) {
+		switch(name) {
 			case "init":
-				reqStats = HttpInitRequest();
+				request = new HttpRequestInit();
 				break;
 				
 			default:
 				throw ("Incorrect request name [" + string(request) + "]");
 		}
 		
-		if (global.debug) {
-			show_debug_message("[HTTP-Reqeust] (" + string(reqStats.httpId) + "#) " + reqStats.url + "\n" + string(reqStats.body));
-		}
+		if (request)
+			request.Send();
+			
+		ds_list_add(net.listRequests, request);
+			
 	} catch(exception) {
 		// TODO: пока просто показываю сообщение об ошибке
 		// Позже нужно добавить обработку
-		show_message(exception);
+		show_debug_message(exception);
 	} 
 }

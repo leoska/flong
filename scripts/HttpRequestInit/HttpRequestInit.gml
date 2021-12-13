@@ -3,27 +3,27 @@
 /// @function HttpInitRequest()
 
 function HttpRequestInit() : BaseHttpRequest() constructor {
-	url = 
+	_method = httpMethod.GET;
+	params = {
+		version: global.version,
+		platform: global.platform,
+	};
 	
+	/// @description	Getter for url
+	/// @function		GetApiName()
+	static GetApiName = function() {
+		return "init";
+	}
+	
+	/// @description	Start Process send HTTP-request
+	/// @function		Process()
+	/// @override
 	Process = function() {
 		if (global.networkManager.httpRequests.init)
 			throw ("HTTP Init request is already called.");
 	
-		var host = string(global.networkManager.httpHost);
-		
-		var params = "version=" + global.version + "&" + "platform=" + global.platform;
-	
-		var url = protocol + "://" + host + "init?" +  params;
-		var httpId = http_get(url);
+		httpId = http_get(url);
 		global.networkManager.httpRequests.init = httpId;
-		
-			return {
-		url: url,
-		httpId: httpId,
-		body: undefined
+		return httpId;
 	}
-	}
-
-	
-
 }
