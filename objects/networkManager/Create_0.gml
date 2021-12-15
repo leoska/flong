@@ -11,6 +11,10 @@ httpHost = "localhost:25565/api/";
 httpProtocol = "http";
 listRequests = ds_list_create();
 
+// Player network data
+authorizeToken = "";
+
+
 // WebSocket client
 if (os_is_network_connected()) {
 	socket = network_create_socket(network_socket_ws);

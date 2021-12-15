@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "HttpRequests",
+    "path": "folders/Scripts/HttpRequests.yy",
   },
   "resourceVersion": "1.0",
-  "name": "BaseHttpRequest",
+  "name": "HttpRequestRegister",
   "tags": [],
   "resourceType": "GMScript",
 }
