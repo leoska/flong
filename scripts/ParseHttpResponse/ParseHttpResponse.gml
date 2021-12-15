@@ -37,13 +37,20 @@ function ParseHttpResponse(id, status, bodyStr, url, httpStatus) {
 		if (status < 0) {
 			throw ("Http response has a error [status of less than 0].");
 		}
+		
+		if (!reqFind) {
+			throw ("Http response id [" + string(id) + "] not found in net.listRequests");
+		}
 			
 		// First of all - try to parse Error
-		if (body.error != undefined)
+		if (ds_map_exists(body, "error"))
 			throw ("Http response has a error [response has a error].");
 			
 		// Now, try to process Response
 		req.Callback(body);
+		
+		// Free ds_map response
+		ds_map_destroy(body);
 		
 	} catch(exception) {
 		// TODO: пока просто показываю сообщение об ошибке

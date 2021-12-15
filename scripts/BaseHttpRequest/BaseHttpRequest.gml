@@ -48,7 +48,7 @@ function BaseHttpRequest() constructor {
 	
 	/// @description	Process of server's response
 	/// @function		Response(data)
-	/// @param {Struct} data - data from server
+	/// @param {ds_map} data - data from server
 	/// @virtual
 	Response = function(data) {
 		throw ("Try to call virtual method.");

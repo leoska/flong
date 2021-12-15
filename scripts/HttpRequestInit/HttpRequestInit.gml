@@ -18,12 +18,15 @@ function HttpRequestInit() : BaseHttpRequest() constructor {
 	/// @description	Start Process send HTTP-request
 	/// @function		Process()
 	/// @override
-	Process = function() {
-		if (global.networkManager.httpRequests.init)
-			throw ("HTTP Init request is already called.");
+	Process = function() {	
+		return http_get(url);
+	}
 	
-		httpId = http_get(url);
-		global.networkManager.httpRequests.init = httpId;
-		return httpId;
+	/// @description	Process of server's response
+	/// @function		Response(data)
+	/// @param {ds_map} data - data from server
+	/// @override
+	Response = function(data) {
+		show_debug_message(string(data));
 	}
 }

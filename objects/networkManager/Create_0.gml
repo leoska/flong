@@ -16,7 +16,7 @@ if (os_is_network_connected()) {
 	socket = network_create_socket(network_socket_ws);
 	network_set_config(network_config_use_non_blocking_socket, 1);
 } else {
-	show_debug_message("");
+	show_debug_message("The device is not connected to the Internet.");
 }
 
 
